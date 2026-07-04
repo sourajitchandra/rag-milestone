@@ -1,0 +1,30 @@
+# ── Secrets (never commit) ────────────────────────────────
+.env
+
+# ── Scraped data (large HTML files, regenerated each run) ────────────────────
+# raw HTML is large and regenerable — never commit it
+data/raw/
+# data/processed/ and vector_store/ are committed so GitHub Actions
+# can push refreshed artefacts back to the repo on each daily run.
+
+# ── Python ────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# ── Virtual environment ───────────────────────────────────
+venv/
+.venv/
+env/
+
+# ── IDE / OS ──────────────────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ── Logs ──────────────────────────────────────────────────
+*.log
+logs/

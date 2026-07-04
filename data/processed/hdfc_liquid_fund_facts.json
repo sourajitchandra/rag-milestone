@@ -1,0 +1,19 @@
+{
+  "scheme_name": "HDFC LIQUID FUND - DIRECT PLAN - GROWTH OPTION",
+  "category": "Debt Liquid",
+  "amc": "HDFC MUTUAL FUND",
+  "expense_ratio": "0.2%",
+  "exit_load": "Nil",
+  "minimum_sip": "₹100",
+  "minimum_lumpsum": "₹100",
+  "lock_in_period": "N/A",
+  "riskometer": "Moderate",
+  "benchmark_index": "CRISIL Liquid Debt A-I Index",
+  "nav": "₹5504.91",
+  "nav_date": null,
+  "fund_managers": "Dhruv Muchhal, Swapnil Jangam, Rohan Pillai",
+  "slug": "hdfc_liquid_fund",
+  "source_url": "https://groww.in/mutual-funds/hdfc-liquid-fund-direct-growth",
+  "scraped_at": "2026-06-30T16:40:45.057212+00:00",
+  "parsed_at": "2026-06-30T17:50:25.583564+00:00"
+}

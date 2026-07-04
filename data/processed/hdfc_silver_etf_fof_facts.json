@@ -1,0 +1,19 @@
+{
+  "scheme_name": "HDFC SILVER ETF FUND OF FUND DIRECT GROWTH",
+  "category": "Commodities Silver",
+  "amc": "HDFC MUTUAL FUND",
+  "expense_ratio": "0.22%",
+  "exit_load": "Exit load of 1%, if redeemed within 15 days.",
+  "minimum_sip": "₹100",
+  "minimum_lumpsum": "₹100",
+  "lock_in_period": "N/A",
+  "riskometer": "Very High",
+  "benchmark_index": "Domestic Price of Silver",
+  "nav": "₹35.97",
+  "nav_date": null,
+  "fund_managers": "Arun Agarwal, Nandita Menezes",
+  "slug": "hdfc_silver_etf_fof",
+  "source_url": "https://groww.in/mutual-funds/hdfc-silver-etf-fof-direct-growth",
+  "scraped_at": "2026-06-30T16:40:44.030420+00:00",
+  "parsed_at": "2026-06-30T17:50:25.281081+00:00"
+}

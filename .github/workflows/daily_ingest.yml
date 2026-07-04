@@ -1,0 +1,104 @@
+# .github/workflows/daily_ingest.yml
+# ─────────────────────────────────────────────────────────────────────────────
+# Phase 10 — Daily Scheduler: Automated Ingestion
+# ─────────────────────────────────────────────────────────────────────────────
+# Runs the full data-ingestion pipeline once a day so the vector store
+# always reflects the latest NAV, expense ratio, and other scheme data
+# from Groww — without any manual intervention or always-on server.
+#
+# Pipeline steps:
+#   scraper.py  →  parser.py  →  chunker.py  →  embedder.py
+#
+# On success:
+#   Refreshed vector_store/faiss_index.bin + metadata.json are committed
+#   back to the main branch by github-actions[bot].
+#
+# On failure:
+#   Any step that exits non-zero marks the job as failed.
+#   GitHub sends an email alert. The existing index in the repo is untouched.
+#
+# Manual trigger:
+#   Go to Actions → "Daily Ingestion Pipeline" → "Run workflow".
+#
+# Required GitHub Secret:
+#   GROQ_API_KEY  — set in: Settings → Secrets and variables → Actions
+# ─────────────────────────────────────────────────────────────────────────────
+
+name: Daily Ingestion Pipeline
+
+on:
+  schedule:
+    # 20:00 UTC every day  ≈  01:30 IST (next calendar day)
+    # Runs overnight when Groww data is typically stable.
+    - cron: '0 20 * * *'
+
+  # Allows a manual run from the GitHub Actions UI at any time.
+  workflow_dispatch:
+
+jobs:
+  ingest:
+    name: Scrape → Parse → Chunk → Embed
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── 1. Checkout ──────────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Use the built-in GITHUB_TOKEN so the bot can push back to the repo.
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # ── 2. Python setup ──────────────────────────────────────────────────────
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          # Cache pip dependencies keyed on requirements.txt to speed up runs.
+          cache: 'pip'
+
+      # ── 3. Install dependencies ──────────────────────────────────────────────
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # ── 4. Scrape ────────────────────────────────────────────────────────────
+      # Fetches fresh HTML for all 5 Groww scheme URLs.
+      # Exits non-zero if any scheme fails (after 3 retries with backoff).
+      - name: Scrape Groww pages
+        run: python src/scraper.py
+
+      # ── 5. Parse ─────────────────────────────────────────────────────────────
+      # Extracts structured facts from the saved HTML files.
+      # Exits non-zero if any core field is missing from any scheme.
+      - name: Parse HTML → structured facts
+        run: python src/parser.py
+
+      # ── 6. Chunk ─────────────────────────────────────────────────────────────
+      # Builds 35 semantic chunks (7 groups × 5 schemes).
+      # Exits non-zero if chunk count ≠ 35 or metadata is incomplete.
+      - name: Build semantic chunks
+        run: python src/chunker.py
+
+      # ── 7. Embed + Index ─────────────────────────────────────────────────────
+      # Generates BGE-base-en-v1.5 embeddings and rebuilds the FAISS index.
+      # Any uncaught exception causes a non-zero exit automatically.
+      - name: Embed chunks & rebuild FAISS index
+        env:
+          # GROQ_API_KEY is not used by embedder.py, but passed for completeness
+          # in case future steps (e.g. validation LLM call) need it.
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: python src/embedder.py
+
+      # ── 8. Commit refreshed artefacts back to the repo ───────────────────────
+      # `git diff --cached --quiet` exits 0 if nothing changed → no empty commit.
+      # `[skip ci]` in the commit message prevents this push from re-triggering
+      # the workflow in a loop.
+      - name: Commit refreshed vector store
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add vector_store/faiss_index.bin vector_store/metadata.json \
+                  data/processed/
+          git diff --cached --quiet \
+            && echo "No changes to commit — data unchanged since last run." \
+            || git commit -m "chore: daily vector store refresh [skip ci]"
+          git push

@@ -1,0 +1,19 @@
+{
+  "scheme_name": "HDFC NIFTY500 MULTICAP 50:25:25 INDEX FUND - DIRECT PLAN - GROWTH",
+  "category": "Equity Multi Cap",
+  "amc": "HDFC MUTUAL FUND",
+  "expense_ratio": "0.33%",
+  "exit_load": "Nil",
+  "minimum_sip": "₹100",
+  "minimum_lumpsum": "₹100",
+  "lock_in_period": "N/A",
+  "riskometer": "Very High",
+  "benchmark_index": "Nifty 500 Multicap 50:25:25 Total Return Index",
+  "nav": "₹9.98",
+  "nav_date": null,
+  "fund_managers": "Arun Agarwal, Nandita Menezes",
+  "slug": "hdfc_nifty500_multicap",
+  "source_url": "https://groww.in/mutual-funds/hdfc-nifty500-multicap-50:25:25-index-fund-direct-growth",
+  "scraped_at": "2026-06-30T16:40:45.978783+00:00",
+  "parsed_at": "2026-06-30T17:50:25.940088+00:00"
+}
