@@ -39,6 +39,10 @@ jobs:
   ingest:
     name: Scrape → Parse → Chunk → Embed
     runs-on: ubuntu-latest
+    
+    # Required to allow the bot to push commits back to the repo
+    permissions:
+      contents: write
 
     steps:
       # ── 1. Checkout ──────────────────────────────────────────────────────────
