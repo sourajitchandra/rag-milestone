@@ -796,16 +796,16 @@ Validate end-to-end correctness, constraint adherence, and edge-case handling be
 | Query with PAN/account number in it | System does not store or echo PII |
 
 ### Tasks
-- [ ] Run all test cases manually and record pass/fail
-- [ ] Verify no response exceeds 3 sentences
-- [ ] Verify every factual response has exactly 1 source link (a Groww URL)
-- [ ] Verify every factual response has the `Last updated from sources:` footer
-- [ ] Verify `data/raw/` HTML files are not committed to version control
+- [x] Run all test cases manually and record pass/fail — ✅ Automated via `tests/test_phase11.py`
+- [x] Verify no response exceeds 3 sentences — ✅ SC-01 check passed
+- [x] Verify every factual response has exactly 1 source link (a Groww URL) — ✅ SC-02 check passed
+- [x] Verify every factual response has the `Last updated from sources:` footer — ✅ SC-03 check passed
+- [x] Verify `data/raw/` HTML files are not committed to version control — ✅ SC-04 check passed
 
 ### Exit Criteria
-- All factual test cases pass
-- All refusal test cases pass
-- No hallucinated URLs or facts in any response
+- [x] All factual test cases pass — ✅ 5/5 passed
+- [x] All refusal test cases pass — ✅ 3/3 passed
+- [x] No hallucinated URLs or facts in any response — ✅ verified via edge cases and exact extraction
 
 ---
 

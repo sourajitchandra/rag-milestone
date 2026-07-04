@@ -28,9 +28,9 @@ name: Daily Ingestion Pipeline
 
 on:
   schedule:
-    # 20:00 UTC every day  ≈  01:30 IST (next calendar day)
-    # Runs overnight when Groww data is typically stable.
-    - cron: '0 20 * * *'
+    # 05:00 UTC every day  ≈  10:30 IST
+    # Runs in the morning.
+    - cron: '0 5 * * *'
 
   # Allows a manual run from the GitHub Actions UI at any time.
   workflow_dispatch:
