@@ -9,11 +9,11 @@
   "lock_in_period": "N/A",
   "riskometer": "Moderate",
   "benchmark_index": "CRISIL Liquid Debt A-I Index",
-  "nav": "₹5512.66",
+  "nav": "₹5514.41",
   "nav_date": null,
   "fund_managers": "Dhruv Muchhal, Swapnil Jangam, Rohan Pillai",
   "slug": "hdfc_liquid_fund",
   "source_url": "https://groww.in/mutual-funds/hdfc-liquid-fund-direct-growth",
-  "scraped_at": "2026-07-04T12:04:42.457470+00:00",
-  "parsed_at": "2026-07-04T12:04:43.635555+00:00"
+  "scraped_at": "2026-07-05T08:07:52.430315+00:00",
+  "parsed_at": "2026-07-05T08:07:53.768712+00:00"
 }
