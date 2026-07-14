@@ -2,18 +2,18 @@
   "scheme_name": "HDFC DEFENCE FUND DIRECT PLAN GROWTH",
   "category": "Equity Thematic",
   "amc": "HDFC MUTUAL FUND",
-  "expense_ratio": "0.87%",
+  "expense_ratio": "0.86%",
   "exit_load": "Exit load of 1%, if redeemed within 1 year.",
   "minimum_sip": "₹100",
   "minimum_lumpsum": "Not Supported (direct SIP only)",
   "lock_in_period": "N/A",
   "riskometer": "Very High",
   "benchmark_index": "Nifty India Defence Total Return Index",
-  "nav": "₹30.48",
+  "nav": "₹30.24",
   "nav_date": null,
   "fund_managers": "Priya Ranjan, Dhruv Muchhal, Rahul Baijal",
   "slug": "hdfc_defence_fund",
   "source_url": "https://groww.in/mutual-funds/hdfc-defence-fund-direct-growth",
-  "scraped_at": "2026-07-13T08:22:28.376548+00:00",
-  "parsed_at": "2026-07-13T08:22:30.195657+00:00"
+  "scraped_at": "2026-07-14T07:15:48.391009+00:00",
+  "parsed_at": "2026-07-14T07:15:50.184551+00:00"
 }
