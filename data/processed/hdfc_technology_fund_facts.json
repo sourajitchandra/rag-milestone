@@ -2,18 +2,18 @@
   "scheme_name": "HDFC TECHNOLOGY FUND - DIRECT PLAN GROWTH",
   "category": "Equity Sectoral",
   "amc": "HDFC MUTUAL FUND",
-  "expense_ratio": "1.1%",
+  "expense_ratio": "1.09%",
   "exit_load": "Exit load of 1%, if redeemed within 30 days.",
   "minimum_sip": "₹100",
   "minimum_lumpsum": "₹100",
   "lock_in_period": "N/A",
   "riskometer": "Very High",
   "benchmark_index": "BSE Teck Total Return Index",
-  "nav": "₹11.79",
+  "nav": "₹11.74",
   "nav_date": null,
   "fund_managers": "Dhruv Muchhal, Balakumar Balasubramanian",
   "slug": "hdfc_technology_fund",
   "source_url": "https://groww.in/mutual-funds/hdfc-technology-fund-direct-growth",
-  "scraped_at": "2026-07-15T07:20:53.827445+00:00",
-  "parsed_at": "2026-07-15T07:20:56.012444+00:00"
+  "scraped_at": "2026-07-16T07:28:05.650259+00:00",
+  "parsed_at": "2026-07-16T07:28:07.877928+00:00"
 }

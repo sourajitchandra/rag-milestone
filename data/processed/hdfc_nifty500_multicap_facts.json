@@ -9,11 +9,11 @@
   "lock_in_period": "N/A",
   "riskometer": "Very High",
   "benchmark_index": "Nifty 500 Multicap 50:25:25 Total Return Index",
-  "nav": "₹10.10",
+  "nav": "₹10.13",
   "nav_date": null,
   "fund_managers": "Arun Agarwal, Nandita Menezes",
   "slug": "hdfc_nifty500_multicap",
   "source_url": "https://groww.in/mutual-funds/hdfc-nifty500-multicap-50:25:25-index-fund-direct-growth",
-  "scraped_at": "2026-07-15T07:20:55.803646+00:00",
-  "parsed_at": "2026-07-15T07:20:56.406509+00:00"
+  "scraped_at": "2026-07-16T07:28:07.667499+00:00",
+  "parsed_at": "2026-07-16T07:28:08.270821+00:00"
 }
